@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCRIBBLE - Chat Room</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: black; color:white;">
+    <h1 style="font-style: Comic Sans MS, cursive, sans-serif;">DoodleQuest</h1>
+    <div class="room-container">
+        <div class="whiteboard-container">
+            <div class="drawing-tools">
+                <input type="color" id="color-picker" value="#000000">
+                <input type="range" id="line-width-slider" min="1" max="20" value="2">
+                <button id="tool-pencil">Pencil</button>
+                <button id="tool-eraser">Eraser</button>
+                <button id="tool-clear">Clear Canvas</button>
+                <div id="word">YourWord</div>
+                <div id="hiddenWord">YourWord</div>
+            </div>
+            <div id="timer" class="timer"></div>
+        </div>
+        <canvas id="whiteboard" width=1000px height=700px></canvas>
+        <div class="chat-container">
+            <div class="room-info">
+                <h2>Room Key: <span id="room-key"></span></h2>
+                <h3>Users:
+                <div class="user-list-container">
+                    <ul id="user-list" class="user-list"></ul>
+                </div>
+                </h3>
+            </div>
+            <div class="btn">
+            <button id="leave-room-button" style="display: none;" onclick="leaveRoom()">Leave Room</button>
+                <button id="end-room-button" style="display: none;" onclick="endRoom()">End Room</button>
+            </div>
+            <div class="chat-box" id="chat-box" style="width:400px;
+            margin-bottom: 20px; margin-top:20px;"></div>
+            <input type="text" id="message-input" style="width: 300px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            transition: all 0.2s ease;" placeholder="Type your message...">
+            <button id="send-message"  onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <div id="createRoomModal" class="modal">
+        <div id="modalContent" class="modal-content">
+            <h2 style="color: aliceblue;">It's your turn, choose a word</h2>
+           <div id="WordsContent" class="modal-content"></div>
+            <!-- Word buttons will be added here -->
+        </div>
+    </div>
+    
+    <div id="ScoreModal" class="modal">
+        <div id="scoreContent" class="score-content">
+           <h2 id="Game_over" style="display: none;">Game Over!</h2>
+            <h2 id="roundComplete">Here are the scores!!</h2>
+            <!-- Word buttons will be added here --> 
+                <div class="user-list-container">
+                    <ul id="score-list" class="user-list"></ul>
+                </div>
+            <button id="Game_end" style="display: none; margin-left: 120px; margin-top: 10px;" onclick="endRoom()">End Game</button>
+             
+        </div>
+    </div>
+    
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('room-key').innerText = getRoomKeyFromURL();
+      
+        // Call fetchUsersInRoom() when the page loads
+        window.onload = function() {
+            fetchUsersInRoom(true);
+            listenForUsersNumber();
+            scorelist();
+        };
+    
+    </script>
+</body>
+</html>

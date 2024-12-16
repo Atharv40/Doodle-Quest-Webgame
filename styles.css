@@ -1,0 +1,376 @@
+
+.chat-box {
+    overflow-y: auto; /* Add scrollbar if content overflows */
+    max-height: 60vh; 
+ /* Limit height on smaller screens*/
+}
+
+button{
+    height: 40px;
+    width: 130px;
+    border-radius: 5px;
+    border: none;
+    margin: 0 20px;
+    border: 1px solid black;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+button:hover{
+    background: #3374FF;;
+    color: wheat;
+}
+/* Adjust button styles for better touch usability */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #e0e0e0; /* Faint black border */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.option p {
+    margin-bottom: 10px;
+}
+
+.option input[type="text"],
+.option button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #e0e0e0; /* Faint black border */
+    border-radius: 5px;
+}
+
+.option input[type="text"]:focus,
+.option button:focus {
+    border-color: #3498db; /* Dark border color when focused */
+    outline: none; /* Remove default focus outline */
+}
+
+.option button {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+}
+
+.option button:hover {
+    background-color: #2980b9;
+}
+
+/* Add more specific selector for buttons inside .option */
+.option button.create-button,
+.option button.join-button {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+.option button.create-button:hover,
+.option button.join-button:hover {
+    background-color: #2980b9;
+}
+
+#message-input,
+button {
+    display: inline-block; /* Ensure buttons are displayed */
+}
+
+/* Existing styles */
+
+/* Existing styles */
+
+body {
+    margin: 0;
+    display: flex;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+
+
+.room-info {
+    margin-bottom: 20px;
+    
+}
+
+.room-info h2,
+.room-info h3 {
+    margin: 10px 0;
+    overflow-y: auto;
+}
+
+#user-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#user-list li {
+    margin-bottom: 5px;
+}
+
+.chat-box {
+    flex: 1;
+    min-height: 300px;
+    max-height: 300px;
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f4f4f4; /* WhatsApp-like background color */
+    color: black;
+}
+
+.message {
+    background-color: #e2f7fe; /* WhatsApp-like message background color */
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    max-width: 80%; /* Limit message width */
+}
+
+.message.sent {
+    background-color: #dcf8c6; /* WhatsApp-like sent message background color */
+    align-self: flex-end; /* Align sent messages to the right */
+}
+
+.message .sender {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Remaining styles */
+
+
+/* Existing styles */
+
+.room-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.whiteboard-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* .whiteboard-container.eraser {
+    /* cursor: url('images/eraser-cursor.png') 0 25, auto; Path to the eraser cursor image */
+
+
+
+#whiteboard {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    width: 1000px; /* Adjust as needed */
+    height: 700px; /* Adjust as needed */
+}
+
+
+.drawing-tools {
+    border:1px solid black;
+    border-radius: 10px;
+    position: absolute;
+    top: 0px; 
+    left: 0px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.drawing-tools input[type="color"]
+/* .drawing-tools button */{
+   margin-top:10px;
+    margin-bottom: 10px;
+    margin-left: 50px
+}
+.drawing-tools input[type="range"]
+{
+margin-top:20px;
+    margin-left:10px;
+    margin-bottom:20px;
+}
+.drawing-tools button{
+    margin-bottom:10px;
+}
+/* Adjust chat container styles */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-left: 20px; /* Adjust as needed */
+    margin-right: 20px; /* Add margin on the right to separate from the whiteboard */
+}
+
+.user-list-container {
+    max-height: 150px; /* Adjust the height as needed */
+    overflow-y: auto; /* Add scrollbar if content overflows */
+    border: 2px solid white; /* Add white border */
+    border-radius: 10px; /* Add border radius */
+    padding: 10px; /* Add padding */
+    display: flex; /* Display items in a flex container */
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start (left) */
+}
+
+.user-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.user-list li {
+    margin-bottom: 5px;
+    display: flex; /* Display items in a flex container */
+    align-items: center; /* Align items vertically */
+}
+
+.avatar {
+    width: 50px; /* Adjust avatar size as needed */
+    height: 50px; /* Adjust avatar size as needed */
+    border-radius: 50%; /* Make avatars circular */
+    margin-right: 15px; /* Add spacing between avatar and name */
+    margin-left: 15px; /* Add spacing between avatar and anme */
+}
+
+.room-info h3 {
+    margin: 10px;
+    font-size: 22px; /* Increase font size */
+    font-weight: bold; /* Make the username list bold */
+}
+
+/* Add animation for modal */
+@keyframes modalPopIn {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes modalPopOut {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+  
+  
+      .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal.pop-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: modalPopIn 0.3s ease-out forwards;
+  }
+  
+  .modal.pop-out {
+    animation: modalPopOut 0.3s ease-in forwards;
+  }
+  
+  .modal-content {
+      text-align: center;
+      background-color: #000000;
+      color: #dcf8c6;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #f8f8f8;
+      width: 80%;
+      max-width: 400px;
+  }
+  
+  .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    text-shadow: 0 0 10px #fff;
+      text-decoration: none;
+      cursor: pointer;
+  }
+
+  /* Positioning and styling for the timer */
+.timer {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 940px;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    padding: 5px 10px; /* Padding for the timer */
+    border-radius: 5px; /* Rounded corners */
+}
+
+
+#word, #hiddenWord {
+    font-size: 24px;
+    font-weight: bold;
+    color:black;
+    display: none;
+    border: 1px solid black;
+    border-radius: 10px; 
+}
+
+.score-content {
+    text-align: center;
+    background-color: #000000;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+}
